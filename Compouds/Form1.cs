@@ -43,7 +43,7 @@ namespace Compounds
                     categoryOutput.Text = "250 and above km/h";
                     break;
                 default:
-                    categoryOutput.Text = "Not a valid category";
+                    categoryOutput.Text = "Not a valid category";   
                     break;
             }
         }
@@ -117,17 +117,45 @@ namespace Compounds
         private void thisButton_Click(object sender, EventArgs e)
         {
             //alternate BackColor between Black and Goldenrod 
+            if (thisButton.BackColor == Color.Black)
+            {
+                thisButton.BackColor = Color.Goldenrod;
+            }
+            else
+            {
+                thisButton.BackColor = Color.Black;
+            }
         }
 
         private void thatButton_Click(object sender, EventArgs e)
         {
             //alternate BackColor between Black and Goldenrod 
+            if (thatButton.BackColor == Color.Black)
+            {
+                thatButton.BackColor = Color.Goldenrod;
+            }
+            else
+            {
+                thatButton.BackColor = Color.Black;
+            }
         }
 
         private void andButton_Click(object sender, EventArgs e)
         {
             //use compound if statements to give outputs based on 
             //if both colours are the same or different
+            if ((thisButton.BackColor == Color.Goldenrod) && (thatButton.BackColor == Color.Goldenrod))
+            {
+                andLabel.Text = "Both buttons are goldenrod";
+            }
+            else if ((thisButton.BackColor == Color.Black) && (thatButton.BackColor == Color.Black))
+            {
+                andLabel.Text = "Both buttons are black";
+            }
+            else
+            {
+                andLabel.Text = "Both colors are different colors";
+            }
         }
     }
 }
